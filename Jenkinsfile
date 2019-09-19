@@ -30,6 +30,7 @@ pipeline {
     stage('Stop App Docker Container '){
             steps {
               sh 'sudo docker kill TestApp'
+              sh 'sudo docker rm TestApp'
             }
     }
   }
