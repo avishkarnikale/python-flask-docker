@@ -11,5 +11,10 @@ pipeline {
                         sh 'make all'
                   }
     }
+    stage('Build Docker Image '){
+            steps {
+                        sh 'docker build --tag=cdend-uda-avish-capstn .'
+            }
+    }
   }
 }
