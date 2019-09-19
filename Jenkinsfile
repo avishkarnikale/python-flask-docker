@@ -22,7 +22,9 @@ pipeline {
             }
     }
     stage('Verify that app is up'){
-          sh 'curl -fsS http://localhost:80 > /dev/null'
+            steps {
+                        sh 'curl -fsS http://localhost:80 > /dev/null'
+            }
     }
   }
 }
