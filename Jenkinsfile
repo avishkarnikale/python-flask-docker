@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Run Docker Image '){
             steps {
-                        sh 'sudo docker run -d -p 80:80 cdend-uda-avish-capstn --name TestApp'
+                        sh 'sudo docker run -d -p 80:80 cdend-uda-avish-capstn '
             }
     }
     stage('Verify that app is up'){
