@@ -8,12 +8,12 @@
 setup:
 	# Create python virtualenv & source it
 	# source ~/.devops/bin/activate
-	sudo python3 -m venv .devops
+	python3 -m venv .devops
 	sudo source .devops/bin/activate
 
 install:
 	# This should be run from inside a virtualenv
-	sudo pip install -r requirements.txt
+	pip install -r requirements.txt
 
 test:
 	# Additional, optional, tests could go here
@@ -23,9 +23,9 @@ test:
 lint:
 	# See local hadolint install instructions:   https://github.com/hadolint/hadolint
 	# This is linter for Dockerfiles
-	sudo hadolint Dockerfile
+	hadolint Dockerfile
 	# This is a linter for Python source code linter: https://www.pylint.org/
 	# This should be run from inside a virtualenv
-	sudo pylint --disable=R,C,W1203 app.py
+	pylint --disable=R,C,W1203 app.py
 
 all: setup install lint test
