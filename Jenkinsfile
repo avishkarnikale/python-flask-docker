@@ -8,7 +8,6 @@ pipeline {
     }
     stage('Lint python/Dockerfile post virtual env setp '){
             steps {
-                        sh 'sudo su'
                         sh 'make all'
                   }
     }
