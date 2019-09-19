@@ -21,5 +21,8 @@ pipeline {
                         sh 'sudo docker run -d -p 80:80 cdend-uda-avish-capstn '
             }
     }
+    stage('Verify that app is up'){
+          sh 'curl -fsS http://localhost:80 > /dev/null'
+    }
   }
 }
