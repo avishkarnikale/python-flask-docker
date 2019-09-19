@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Run Docker Image '){
             steps {
-                        sh 'sudo docker run -p 8080:80 cdend-uda-avish-capstn '
+                        sh 'sudo docker run -p 80:80 cdend-uda-avish-capstn '
             }
     }
   }
