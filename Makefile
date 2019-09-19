@@ -12,8 +12,8 @@ setup:
 
 install:
 	# This should be run from inside a virtualenv
-	pip3 install --upgrade pip3 &&\
-		pip3 install3 -r requirements.txt
+	pip install --upgrade pip &&\
+		pip install3 -r requirements.txt
 
 test:
 	# Additional, optional, tests could go here
