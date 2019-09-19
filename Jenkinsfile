@@ -6,7 +6,7 @@ pipeline {
                         sh 'tidy -q -e *.html'
                   }
     }
-    stage('Lint python/Dockerfile post virtual env setp '){
+    stage('Lint python & Dockerfile'){
             steps {
                         sh 'make all'
                   }
@@ -21,13 +21,13 @@ pipeline {
                         sh 'sudo docker run -d --name TestApp -p 80:80 cdend-uda-avish-capstn '
             }
     }
-    stage('Verify that app is up'){
+    stage('Verify app is up'){
             steps {
                         sh 'curl -fsS http://localhost:80 > /dev/null'
             }
     }
     
-    stage('Stop App Docker Container '){
+    stage('Stop/Kill App Docker Container '){
             steps {
               sh 'sudo docker kill TestApp'
               sh 'sudo docker rm TestApp'
