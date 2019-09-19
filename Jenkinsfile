@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Build Docker Image '){
             steps {
-                        sh 'sudo docker build --tag=cdend-uda-avish-capstn .'
+                        sh 'sudo docker build --tag=cdend-uda-avish-capstn:latest .'
             }
     }
     stage('Run Docker Image '){
