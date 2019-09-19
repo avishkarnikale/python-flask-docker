@@ -8,7 +8,6 @@
 setup:
 	# Create python virtualenv & source it
 	# source ~/.devops/bin/activate
-	sudo su
 	python3 -m venv .devops
 	source .devops/bin/activate
 
