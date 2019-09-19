@@ -16,5 +16,10 @@ pipeline {
                         sh 'sudo docker build --tag=cdend-uda-avish-capstn .'
             }
     }
+    stage('Build Docker Image '){
+            steps {
+                        sh 'sudo docker run -p 8080:80 cdend-uda-avish-capstn '
+            }
+    }
   }
 }
