@@ -16,6 +16,11 @@ pipeline {
                         sh 'sudo docker build --tag=cdend-uda-avish-capstn:latest .'
             }
     }
+    stage('Check Image Security'){
+            steps {
+                        sh 'sudo anchore-cli image vuln cdend-uda-avish-capstn:latest'
+            }
+    }
     stage('Run Docker Image '){
             steps {
                         sh 'sudo docker run -d --name TestApp -p 80:80 cdend-uda-avish-capstn '
@@ -27,7 +32,7 @@ pipeline {
             }
     }
     
-    stage('Stop/Kill App Docker Container '){
+    stage('Kill/Remove TestApp container'){
             steps {
               sh 'sudo docker kill TestApp'
               sh 'sudo docker rm TestApp'
